@@ -1,7 +1,40 @@
+import{useRef} from 'react'
+import Produtos from "./Produtos"
+
 export default function Login(){
+    const user = useRef();
+    const password = useRef();
+
+    const getUser = sessionStorage.getItem('userData');
+    const getPassaword = sessionStorage.getItem();
+
+    const handleSubmit =() =>{
+    
+        if(user.corrent.value === 'Admin' && getPassaword.current.value ==='123456'){
+            
+            //Autenticação
+            let token = Math.random().toString(16).substring(2)+Math.random().toString(16).substring(2);
+            sessionStorage.setItem('userData', 'Admin');
+            sessionStorage.setItem('senhaData', token)
+        }else{
+            alert("Usuario ou senha invalidos")
+        }
+    }
+
     return(
-    <>
-        <h1>Login</h1>
-    </>
+    <section>
+        {getUser && getPassaword ? (
+            <Produtos/>
+
+        ):(
+            <form onSubmit={handleSubmit}>
+                <label htmlFor="usuario">Usuario:</label>
+                <input type="text" ref={user}/>
+                <label htmlFor="password">Senha</label>
+                <input type="password" ref={password}/>
+                <input type="submit" value="Login" />
+            </form>
+        )}
+    </section>
 )
 }
