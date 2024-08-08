@@ -6,16 +6,16 @@ export default function Login(){
     const password = useRef();
 
     const getUser = sessionStorage.getItem('userData');
-    const getPassaword = sessionStorage.getItem();
+    const getPassaword = sessionStorage.getItem('senhaData');
 
-    const handleSubmit =() =>{
+    const handleSubmit = () =>{
     
-        if(user.corrent.value === 'Admin' && getPassaword.current.value ==='123456'){
+        if(user.current.value === 'Admin' && getPassaword.current.value ==='123456'){
             
             //Autenticação
             let token = Math.random().toString(16).substring(2)+Math.random().toString(16).substring(2);
             sessionStorage.setItem('userData', 'Admin');
-            sessionStorage.setItem('senhaData', token)
+            sessionStorage.setItem('senhaData', token);
         }else{
             alert("Usuario ou senha invalidos")
         }
@@ -36,5 +36,5 @@ export default function Login(){
             </form>
         )}
     </section>
-)
+    )
 }

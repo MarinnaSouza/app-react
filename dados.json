@@ -1,0 +1,20 @@
+{
+    "produtos":[
+        {
+            "id": 1,
+            "nome":"É assim que acaba",
+            "autor": "Colleen Hoover",
+            "editora": "Galera Record",
+            "preço": 40,
+            "desc": "romance"
+        },
+        {
+            "id": 2,
+            "nome":"O duque e eu",
+            "autor": "Julia Quinn",
+            "editora": "Arqueiro",
+            "preço": 50,
+            "desc": "romance"
+        }
+    ]
+}
