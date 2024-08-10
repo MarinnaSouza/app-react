@@ -3,14 +3,18 @@ import ModalActions from "../components/ModalActions"
 
 export default function Produtos(){
     const [produtosApi, setProdutosApi] = useState([])
+    const [open, setOpen] = useState(false)
+    const [prodId, setProdId] = useState(0)
 
     useEffect(
         () => {
+            if(!open){
             fetch('http://localhost:5000/produtos')
             .then((resp) => resp.json())
             .then((resp) => setProdutosApi(resp))
             .catch((error) => console.log(error))
-        },[]
+        }
+        },[open]
     )
 
     const handleDelete = (id) => {
@@ -19,15 +23,18 @@ export default function Produtos(){
         .catch((error) => console.log(error))
     }
 
-    const [open, setOpen] = useState(false)
-
+    const handleEdit = (id) =>{
+        setProdId(id)
+        setOpen(true)
+    }
+    
     return(
         <section>
             <button>Cadastrar Livro</button>
             <h1>Lista de livros</h1>
-            {open ? <ModalActions open={open} setOpen={setOpen}/>: ""}
+            {open ? <ModalActions open={open} id={prodId} setOpen={setOpen}/>: ""}
 
-            <button onClick={() => setOpen(true)}>Open-Modal</button>
+            
             <table>
                 <thead>
                     <tr>
@@ -49,6 +56,7 @@ export default function Produtos(){
                             <td>{prod.preco}</td>
                             <td>
                                 <button onClick={handleDelete.bind(this, prod.id)}>Deletar</button>
+                                <button onClick={() => handleEdit(prod.id)}>Editar</button>
                             </td>
 
                         </tr>
