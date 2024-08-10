@@ -1,4 +1,5 @@
 import { useState, useEffect } from "react"
+import ModalActions from "../components/ModalActions"
 
 export default function Produtos(){
     const [produtosApi, setProdutosApi] = useState([])
@@ -17,10 +18,16 @@ export default function Produtos(){
         .then(()=> (window.location = '/produtos'))
         .catch((error) => console.log(error))
     }
+
+    const [open, setOpen] = useState(false)
+
     return(
         <section>
             <button>Cadastrar Livro</button>
             <h1>Lista de livros</h1>
+            {open ? <ModalActions open={open} setOpen={setOpen}/>: ""}
+
+            <button onClick={() => setOpen(true)}>Open-Modal</button>
             <table>
                 <thead>
                     <tr>
