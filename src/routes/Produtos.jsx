@@ -30,7 +30,7 @@ export default function Produtos(){
     
     return(
         <section>
-            <button>Cadastrar Livro</button>
+            <button onClick={() => setOpen(true)}>Cadastrar Livro</button>
             <h1>Lista de livros</h1>
             {open ? <ModalActions open={open} id={prodId} setOpen={setOpen}/>: ""}
 
@@ -65,7 +65,7 @@ export default function Produtos(){
                 </tbody>
                 <tfoot>
                     <tr>
-                        <td colSpan="6" >Listar de Livros em promoção</td>
+                        <td colSpan="6" >Lista de Livros em promoção</td>
                     </tr>
                 </tfoot>
             </table>

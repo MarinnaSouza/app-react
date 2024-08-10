@@ -7,6 +7,14 @@
       "editora": "Galera Record",
       "preco": 40,
       "desc": "romance"
+    },
+    {
+      "id": 0,
+      "nome": "vilao",
+      "desc": "terror",
+      "preco": "60",
+      "autor": "kyik",
+      "editora": "gguj"
     }
   ]
 }

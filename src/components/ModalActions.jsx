@@ -5,6 +5,8 @@ export default function ModalActions(props){
 
     const id = props.id
 
+    let metodo = id ? "PUT" : "POST";
+
     const [produto, setProduto] = useState({
         id: props.id,
         nome: "",
@@ -34,8 +36,8 @@ export default function ModalActions(props){
     const handleSubmit = (e) =>{
         e.preventDefault()
 
-        fetch(`http://localhost:5000/produtos/${id}`, {
-            method: 'PUT',
+        fetch(`http://localhost:5000/produtos/${ id ? id: ""}`, {
+            method: metodo,
             headers:{
                 "Content-Type" : "application/json"
             },
@@ -78,7 +80,7 @@ export default function ModalActions(props){
                             <input type="text" name="editora" id="idEditora" value={produto.editora} onChange={handleChange}/>
                         </div>
                         <div>
-                            <button>Editar</button>
+                            <button>{id ? "Editar": "Cadastrar"}</button>
                         </div>
                     </fieldset>
                 </form>
