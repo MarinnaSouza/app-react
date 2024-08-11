@@ -18,7 +18,7 @@ export default function Produtos(){
     )
 
     const handleDelete = (id) => {
-        fetch(`http://localhost:5000/produtos/${id}`, {method: "delete"})
+        fetch(`http://localhost:5000/produtos/${id}`, {method: 'delete'})
         .then(()=> (window.location = '/produtos'))
         .catch((error) => console.log(error))
     }
@@ -33,7 +33,6 @@ export default function Produtos(){
             <button onClick={() => setOpen(true)}>Cadastrar Livro</button>
             <h1>Lista de livros</h1>
             {open ? <ModalActions open={open} id={prodId} setOpen={setOpen}/>: ""}
-
             
             <table>
                 <thead>

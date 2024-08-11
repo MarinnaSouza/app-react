@@ -2,19 +2,43 @@
   "produtos": [
     {
       "id": "1",
-      "nome": "É assim que acaba ",
+      "nome": "É assim que acaba",
       "autor": "Colleen Hoover",
       "editora": "Galera Record",
       "preco": 40,
       "desc": "romance"
     },
     {
-      "id": 0,
-      "nome": "vilao",
-      "desc": "terror",
-      "preco": "60",
-      "autor": "kyik",
-      "editora": "gguj"
+      "id": "2",
+      "nome": "O Hobbit",
+      "autor": "J.R.R. Tolkien",
+      "editora": "HarperCollins",
+      "preco": 50,
+      "desc": "fantasia"
+    },
+    {
+      "id": "6",
+      "nome": "O Pequeno Príncipe",
+      "autor": "Antoine de Saint-Exupéry",
+      "editora": "HarperCollins",
+      "preco": 25,
+      "desc": "infantil"
+    },
+    {
+      "id": "7",
+      "nome": "Dom Casmurro",
+      "autor": "Machado de Assis",
+      "editora": "Principis",
+      "preco": 20,
+      "desc": "clássico"
+    },
+    {
+      "id": "8",
+      "nome": "Orgulho e Preconceito",
+      "autor": "Jane Austen",
+      "editora": "Martin Claret",
+      "preco": 35,
+      "desc": "romance"
     }
   ]
 }
